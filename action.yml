@@ -1,0 +1,26 @@
+name: 'action-cmake'
+description: 'Build repository using CMake'
+author: 'HorstBaerbel / Bim Overbohm'
+branding:
+  icon: layers
+  color: gray-dark
+inputs:
+  sourcedir:
+    description: 'Source directory'
+    required: false
+    default: '.'
+  builddir:
+    description: 'Build directory'
+    required: false
+    default: 'build'
+  cmakeoptions:
+    description: 'Additional options to pass to cmake'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.sourcedir }}
+    - ${{ inputs.builddir }}
+    - ${{ inputs.cmakeoptions }}
