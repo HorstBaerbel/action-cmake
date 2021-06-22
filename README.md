@@ -31,7 +31,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      uses: HorstBaerbel/action-cmake@1.0
+      uses: HorstBaerbel/action-cmake@1.1
       # These are optional (defaults displayed)
       with:
         sourcedir: '.'
